@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Editar Produto</title>
+</head>
+<body>
+
+<%- include('partials/header') %>
+
+<div class="container">
+  <h1>Editar Produto</h1>
+
+  <form action="/produtos/editar/<%= id %>" method="POST">
+    <input type="text" name="nome" value="<%= produto.nome %>" required>
+    <input type="number" name="preco" value="<%= produto.preco %>" required>
+    <button type="submit">Salvar</button>
+  </form>
+
+  <a href="/produtos">Voltar</a>
+</div>
+
+</body>
+</html>

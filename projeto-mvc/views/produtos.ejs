@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- importa o CSS da pasta public -->
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Produtos</title>
+</head>
+<body>
+
+<!-- inclui o header (reutilização de código) -->
+<%- include('partials/header') %>
+
+<div class="container">
+  <h1>Produtos</h1>
+
+  <!-- FORMULÁRIO PARA CRIAR PRODUTO -->
+  <form action="/produtos" method="POST">
+    <!-- name é importante: é o que o backend usa (req.body) -->
+    <input type="text" name="nome" placeholder="Nome do produto" required>
+    <input type="number" name="preco" placeholder="Preço" required>
+
+    <button type="submit">Adicionar</button>
+  </form>
+
+  <!-- LISTA DE PRODUTOS -->
+  <ul>
+    <% produtos.forEach((p, index) => { %>
+      <li>
+        <!-- exibe os dados vindos do controller -->
+        <span><%= p.nome %> - R$ <%= p.preco %></span>
+
+        <!-- link para tela de edição -->
+        <a href="/produtos/editar/<%= index %>">Editar</a>
+
+        <!-- formulário para deletar -->
+        <form action="/produtos/deletar/<%= index %>" method="POST" style="display:inline;">
+          <button type="submit">Excluir</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+
+  <a href="/">Voltar</a>
+</div>
+
+</body>
+</html>
