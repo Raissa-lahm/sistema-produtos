@@ -1,4 +1,4 @@
-# Sistema de Produtos com Node.js 🛒
+# Sistema de Produtos com Node.js 
 
 Um sisteminha de gerenciamento de produtos feito com Node.js, Express e EJS, seguindo a arquitetura MVC. Projeto desenvolvido para praticar back-end com Node e entender melhor como separar as responsabilidades entre Model, View e Controller.
 
